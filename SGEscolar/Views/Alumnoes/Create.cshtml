@@ -1,0 +1,43 @@
+﻿@model SGEscolar.Models.Alumno
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Alumno</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlumnoNombre" class="control-label"></label>
+                <input asp-for="AlumnoNombre" class="form-control" />
+                <span asp-validation-for="AlumnoNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlumnoTelefono" class="control-label"></label>
+                <input asp-for="AlumnoTelefono" class="form-control" />
+                <span asp-validation-for="AlumnoTelefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlumnoCorreo" class="control-label"></label>
+                <input asp-for="AlumnoCorreo" class="form-control" />
+                <span asp-validation-for="AlumnoCorreo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
